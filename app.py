@@ -1,11 +1,17 @@
+import os
+
 from flask import Flask, render_template
+from flask_moment import Moment
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
+# from flask_cors import CORS
+
 from models import setup_db, db
-from flask_cors import CORS
 
 def create_app(test_config=None):
     app = Flask(__name__)
     setup_db(app)
-    CORS(app)
+    # CORS(app)
 
     @app.route("/")
     def home_view():
