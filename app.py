@@ -1,7 +1,18 @@
 from flask import Flask, render_template
-app = Flask(__name__)
+from flask_cors import CORS
 
-@app.route("/")
-def home_view():
-    # return "<h1>Hello, World!</h1>"
-    return render_template('pages/home.html')
+def create_app(test_config=None):
+    app = Flask(__name__)
+    CORS(app)
+
+    @app.route("/")
+    def home_view():
+        # return "<h1>Hello, World!</h1>"
+        return render_template('pages/home.html')
+
+    return app
+
+app = create_app()
+
+if __name__ == '__main__':
+    app.run()
