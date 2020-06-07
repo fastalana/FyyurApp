@@ -14,8 +14,8 @@ import os
 
 
 
-database_path = os.environ['DATABASE_URL']
-# database_path = 'postgres://alanabellucci@localhost:5432/fyyurapp'
+# database_path = os.environ['DATABASE_URL']
+database_path = 'postgres://alanabellucci@localhost:5432/fyyurapp'
 
 db = SQLAlchemy()
 
